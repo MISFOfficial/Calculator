@@ -34,7 +34,7 @@ export const Estimator: React.FC = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4 py-12">
-      <EstimatorHeader />
+      {/* <EstimatorHeader /> */}
 
       <IncomeSection
         units={units}
@@ -54,14 +54,14 @@ export const Estimator: React.FC = () => {
         monthlyCost={monthlyCost}
       />
 
-      <div className="mt-12 text-center pb-20">
+      {/* <div className="mt-12 text-center pb-20">
         <h2 className="text-4xl font-bold text-gray-800 mb-8 max-w-2xl mx-auto leading-tight">
           Go to the next step to get your breakdown
         </h2>
         <button className="bg-[#3b82f6] hover:bg-[#2563eb] text-white text-xl font-bold py-4 px-12 rounded-lg transition-all shadow-md active:scale-[0.98]">
           Next
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
