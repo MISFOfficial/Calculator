@@ -1,51 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #050505;
-  --color-foreground: #ffffff;
-  --color-accent: #6d28d9;
-  --color-accent-light: #a855f7;
-  --color-glass: rgba(255, 255, 255, 0.03);
-  --color-glass-border: rgba(255, 255, 255, 0.1);
-  --color-glass-hover: rgba(255, 255, 255, 0.08);
-
-  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a;
+  --color-accent: #3b82f6;
+  --color-accent-hover: #2563eb;
+  --color-muted-blue: #5b6d85;
+  --color-border: #e2e8f0;
+  --color-input-bg: #f8fafc;
 }
 
 :root {
-  --background: #050505;
-  --foreground: #ffffff;
+  --background: #f8fafc;
+  --foreground: #1a1a1a;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family:
-    "Inter",
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-@utility glass {
-  background: var(--color-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--color-glass-border);
-  box-shadow: var(--shadow-glass);
+@utility section-card {
+  @apply bg-white border border-gray-200 rounded-xl shadow-sm p-6 mb-6;
 }
 
-@utility glass-card {
-  @apply glass rounded-2xl transition-all duration-300;
+@utility input-field {
+  @apply w-full bg-[#f8fafc] border border-gray-200 rounded-lg px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all;
 }
 
-@utility glass-card-hover {
-  @apply hover:bg-[var(--color-glass-hover)] hover:border-[var(--color-accent)] hover:shadow-[0_0_20px_rgba(109,40,217,0.3)];
+@utility summary-row {
+  @apply flex justify-between items-center py-4 px-6 bg-gray-50/50 rounded-lg border border-gray-100;
 }
 
 @layer base {
   * {
-    @apply border-white/10;
+    @apply border-gray-200;
   }
+}
+
+input[type="range"] {
+  @apply w-full h-1.5 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-600;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  @apply w-6 h-6 bg-blue-600 rounded-full border-4 border-white shadow-md appearance-none transition-transform active:scale-95 hover:scale-105;
 }
