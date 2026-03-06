@@ -10,8 +10,8 @@ interface QuoteSummaryProps {
 export const QuoteSummary: React.FC<QuoteSummaryProps> = ({
   selectedFeatures,
 }) => {
-  const minTotal = selectedFeatures.reduce((acc, f) => acc + f.minPrice, 0);
-  const maxTotal = selectedFeatures.reduce((acc, f) => acc + f.maxPrice, 0);
+  const minTotal = selectedFeatures.reduce((acc, f) => acc + f.defaultValue, 0);
+  const maxTotal = selectedFeatures.reduce((acc, f) => acc + f.defaultValue, 0);
 
   if (selectedFeatures.length === 0) return null;
 
@@ -53,7 +53,7 @@ export const QuoteSummary: React.FC<QuoteSummaryProps> = ({
               key={f.id}
               className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-zinc-300 font-medium"
             >
-              {f.name}
+              {f.title}
             </span>
           ))}
         </div>
