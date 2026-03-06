@@ -6,6 +6,18 @@ export const CALC_DEFAULTS = {
   mortgages: 3800,
 };
 
+export interface Feature {
+  id: string;
+  title: string;
+  description: string;
+  type: "slider" | "text";
+  min?: number;
+  max?: number;
+  step?: number;
+  defaultValue: number;
+  unitLabel?: string;
+}
+
 export const CALC_CONFIG = {
   units: {
     min: 50,

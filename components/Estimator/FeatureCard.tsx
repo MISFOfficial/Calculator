@@ -15,24 +15,22 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
   isSelected,
   onToggle,
 }) => {
-  const Icon = feature.icon;
+  // const Icon = feature.icon;
 
   return (
     <div
       onClick={() => onToggle(feature.id)}
-      className={`glass-card glass-card-hover cursor-pointer relative p-6 flex flex-col gap-4 group ${
-        isSelected ? "border-[var(--color-accent)] bg-white/5" : ""
-      }`}
+      className={`glass-card glass-card-hover cursor-pointer relative p-6 flex flex-col gap-4 group ${isSelected ? "border-[var(--color-accent)] bg-white/5" : ""
+        }`}
     >
       <div className="flex justify-between items-start">
         <div
-          className={`p-3 rounded-xl transition-colors ${
-            isSelected
-              ? "bg-accent text-white"
-              : "bg-white/5 text-zinc-400 group-hover:text-white"
-          }`}
+          className={`p-3 rounded-xl transition-colors ${isSelected
+            ? "bg-accent text-white"
+            : "bg-white/5 text-zinc-400 group-hover:text-white"
+            }`}
         >
-          <Icon size={24} />
+          {/* <Icon size={24} /> */}
         </div>
 
         {isSelected && (
@@ -44,7 +42,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
 
       <div>
         <h3 className="font-semibold text-lg text-white mb-1">
-          {feature.name}
+          {feature.title}
         </h3>
         <p className="text-sm text-zinc-400 line-clamp-2 leading-relaxed">
           {feature.description}
@@ -55,7 +53,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
         <span className="text-xs text-zinc-500 font-medium uppercase tracking-wider">
           Starts from
         </span>
-        <span className="text-accent-light font-bold">${feature.minPrice}</span>
+        <span className="text-accent-light font-bold">${feature.defaultValue}</span>
       </div>
 
       {isSelected && (
