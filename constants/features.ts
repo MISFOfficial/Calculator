@@ -1,6 +1,6 @@
 export const CALC_DEFAULTS = {
   units: 100,
-  monthlyRent: 140,
+  monthlyRent: 0,
   occupancyRate: 35,
   operationalCosts: 2000,
   mortgages: 3800,
